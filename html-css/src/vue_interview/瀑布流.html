@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 280px;
+    }
+</style>
+<body>
+
+<div>
+    <img src="../../images/ec997ac7913ca3533007c723ad761afc.jpg">
+    <img src="../../images/d2671ca6a101438cff73043f9f9ab1a4.jpg">
+    <img src="../../images/5c16d5acd7b4234746bda219ea520291.jpg">
+    <img src="../../images/4000eb30f291c319bef118945fc98475.jpg">
+    <img src="../../images/59abdfa6504511516072ae9bd38d1991.jpg">
+    <img src="../../images/20eba5075d83d0e66a04a06158e0ab34.jpg">
+    <img src="../../images/8f945d25e8eeb96c76ec97301c3dba0b.jpg">
+    <img src="../../images/91c7ca80e18da09f4743fb09ab91e22e.jpg">
+    <img src="../../images/4de220325d864694743bc2d1e6a23078.jpg">
+    <img src="../../images/4e60b2b09328e1c534670a9d08333c8e.jpg">
+    <img src="../../images/5ec679fbaa06dc88b38074ba058c566d.jpg">
+    <img src="../../images/8778804105171896f07bee18f8f55e1b.jpg">
+    <img src="../../images/b82ae9ca4a42f93137c1384fc006427c.jpg">
+</div>
+
+<script>
+    $(function () {
+        /**
+         * 瀑布流的条件：图片等宽不等高，不伸缩
+         * 1.获取window的宽度
+         * console.log($(window).width());
+         * console.log(window.innerWidth);
+         */
+        var screenWidth = $(window).width();
+        // 2.获取图片的宽度
+        var imgWidth = $('img').width();
+
+        // 3.计算列数
+        var colrows = parseInt(screenWidth / imgWidth);
+
+        // 4.定义存放的最每一行图片的高度
+        var arr = [];
+
+        // 5.遍历img,给arr赋值
+        $('img').each((index, item) => {
+            if (index < colrows) {
+                arr.push(item.height)
+            } else {
+                // 6.查找arr里最小值
+                var min = Math.min(...arr)
+
+                // 7.查找arr里最小值索引
+                var minIndex = arr.indexOf(min);
+
+                // 8.赋值
+                arr[minIndex] += item.height;
+
+                // 9.设置css样式
+                $(item).css({
+                    position: 'absolute',
+                    top: min + 'px',
+                    left: minIndex * imgWidth + 'px'
+                })
+            }
+        });
+        console.log(arr);
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+.register {
+    height: 500px;
+}
+
+.rg_header {
+    padding: 10px 5px;
+    border-bottom: 2px solid red;
+}
+
+.rg_body {
+    padding-top: 20px;
+}
+
+.rg_body .body_title {
+    height: 40px;
+}
+
+.rg_body .body_title h3 {
+    float: left;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.rg_body .body_title h5 {
+    font-size: 15px;
+    float: right;
+}
+
+.rg_body .body_title h5 a {
+    font-size: 18px;
+    color: #b5314c;
+}
+
+.body_main {
+    width: 600px;
+    margin: 50px auto 0;
+    font-size: 20px;
+}
+
+.body_main ul li label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
+
+.body_main ul li .ipt {
+    width: 242px;
+    height: 37px;
+    border: 1px solid #cccccc;
+}
+
+.body_main ul li {
+    margin-bottom: 20px;
+}
+
+.error {
+    color: #e50914;
+}
+
+.error_icon, .success_icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url("../images/pyg.ico") no-repeat center;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.success {
+    color: #5fb709;
+}
+
+.success_icon {
+    background: url("../images/pyg.ico") no-repeat center;
+}
+
+.safe {
+    margin-left: 170px;
+}
+
+.agree {
+    padding-left: 150px;
+}
+
+.body_main button {
+    font-size: 18px;
+    color: #cccccc;
+    border: 1px solid red;
+}
+
+.body_main .btn {
+    width: 200px;
+    height: 34px;
+    color: #cccccc;
+    background-color: #e50914;
+    margin: 30px 0 0 150px;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动 clear: both</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            /*父级overflow：hidden（）溢出隐藏*/
+            overflow: hidden;
+            width: 800px;
+            border: 1px solid brown;
+            margin: 0 auto;
+        }
+
+        .left {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: #6b6;
+        }
+
+        .right {
+            float: left;
+            width: 230px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        .foot {
+            height: 200px;
+            background-color: #000;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .function {
+            width: 680px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<span>父级没有高度，子盒子浮动了，影响到了下面的布局，故清除浮动</span>
+<div class="head">
+    <div class="left">大猫</div>
+    <div class="right">二猫</div>
+    <!--额外标签法（隔墙法）-->
+    <!--<div class="clear"></div>-->
+</div>
+
+<div class="foot">footer</div>
+
+<span>父级after伪元素</span>
+<span>父级双伪元素</span>
+
+<div class="function">
+    <table border="1px">
+        <thead style="text-align: center">
+        <tr>
+            <td>清除浮动的方式</td>
+            <td>优点</td>
+            <td>缺点</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>额外标签法（隔墙法）</td>
+            <td>通俗简单，书写方便</td>
+            <td>添加许多无意义的标签，结构化较差</td>
+        </tr>
+        <tr>
+            <td>父级overflow：hidden;</td>
+            <td>书写简单</td>
+            <td>溢出隐藏</td>
+        </tr>
+        <tr>
+            <td>父级after伪元素</td>
+            <td>结构语义化正确</td>
+            <td>IE6-7不支持after,兼容而难题</td>
+        </tr>
+        <tr>
+            <td>父级双伪元素</td>
+            <td>结构语义化正确</td>
+            <td>IE6-7不支持after,兼容而难题</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝焦点图布局</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .box {
+        position: relative;
+        width: 400px;
+        height: 280px;
+        background: url("images/timg.jpg") no-repeat;
+        margin: 100px auto;
+    }
+
+    .box .prev {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -15px;
+        width: 20px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, .3);
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    .box .yuandian {
+        position: absolute;
+        left: 50%;
+        margin-left: -75px;
+        bottom: 10px;
+        width: 150px;
+        height: 20px;
+        background-color: rgba(110, 110, 1100, .3);
+        text-align: center;
+        line-height: 20px;
+        border-radius: 20%;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .box .yuandian ul li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, .5);
+        margin-left: 10px;
+        border-radius: 50%;
+    }
+
+    .tudou {
+        width: 212px;
+        height: 180px;
+    }
+
+    .tudou img {
+        width: 100%;
+    }
+
+    .tudou .zzc {
+        display: none;
+        position: absolute;
+        width: 212px;
+        height: 120px;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    .tudou:hover .zzc {
+        display: block;
+    }
+
+    .tudou .zzc .yuan {
+        position: relative;
+        left: 50%;
+        margin-left: -10px;
+        top: 50%;
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
+        background-color: rosybrown;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+    }
+
+</style>
+
+<body>
+
+<div class="box">
+    <div class="prev">
+        <a href="#">&lt;</a>
+    </div>
+
+    <div class="yuandian">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<div class="tudou">
+    <div class="zzc">
+        <div class="yuan">
+            &lt;
+        </div>
+    </div>
+    <img src="images/tudou.jpg">
+</div>
+
+</body>
+</html>

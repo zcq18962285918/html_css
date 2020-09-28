@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html第一课</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            top: 0;
+        }
+
+        a {
+            /*取消a标签默认下划线*/
+            text-decoration: none;
+        }
+
+        a:link {
+            color: #ff00ff;
+        }
+
+        a:visited {
+            color: orange;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            color: blue;
+        }
+
+        .box1 {
+            width: 80%;
+            height: 20%;
+            background-color: #ff00ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box2 {
+            width: 80%;
+            height: 60%;
+        }
+
+        .md_italic {
+            font-style: italic;
+        }
+
+        input:focus {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--默认链接为蓝色，使用伪类选择器：未访问的链接：a:link; 访问过的链接：a:visited; 鼠标经过的链接：a:hover; 鼠标按下的链接：a:active-->
+<a href="http://www.baidu.com">去往小猪佩奇的家</a>
+<a href="#">aa</a>
+
+<!--自定义列表 兄弟关系-->
+<dl>
+    <dt>喜欢</dt>
+    <dd>喜欢你</dd>
+    <dd>喜欢她</dd>
+</dl>
+
+<ul>
+    <li>
+        !DOCTYPE html:<br/>告诉浏览器使用html5版本来显示页面
+    </li>
+    <li>
+        lang="en":<br/>告诉浏览器或者搜索引擎这是一个英文网站
+    </li>
+    <li>
+        charset="UTF=8":<br/>采用utf-8来保存文字
+    </li>
+    <li>
+        <a href="#md">
+            锚点
+        </a>
+    </li>
+    <li>
+        <img src="../images/timg.jpg" title="奖励你的！" width="250px">
+    </li>
+    <li>
+        <a href="../images/timg.jpg" target="_blank">123</a>
+    </li>
+    <li>
+        <h1>一级标题</h1>
+    </li>
+    <li>
+        <h2>一级标题</h2>
+    </li>
+    <li>
+        <h3>一级标题</h3>
+    </li>
+    <li>
+        <h4>一级标题</h4>
+    </li>
+    <li>
+        <h5>一级标题</h5>
+    </li>
+</ul>
+
+<div class="box1">
+    <table border="1" cellpadding="0" cellspacing="0" width="50%">
+        <thead>
+        <tr>
+            <th>喜欢</th>
+            <th>不喜欢</th>
+            <th>更爱</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>打球</td>
+            <td>跳舞</td>
+            <td>开玩笑</td>
+        </tr>
+        <tr>
+            <td>做梦</td>
+            <td>日白</td>
+            <td>压马路</td>
+        </tr>
+        <tr>
+            <td><a href="http://www.baidu.com">去百度</a></td>
+            <td><a href="../images/timg.jpg">找不到</a></td>
+            <td><img src="../images/timg.jpg" width="50px"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<p id="md" class="md_italic">
+    <!--这是一个锚点链接,你只要点击锚点，我就出现再你的视野里-->
+    讲&nbsp;&nbsp;&nbsp;&nbsp;究<br/>
+
+    这是一个锚点链接加上了注释,你只要点击锚点，我就出现再你的视野里，但是你看不到我的注释
+</p>
+
+<!--把获取的光标表单元素显示出来 input:focus-->
+<input type="text">
+<input type="text">
+<input type="text">
+
+
+</body>
+<script>
+
+</script>
+</html>

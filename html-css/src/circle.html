@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>circle</title>
+
+    <style>
+        .o1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #faf;
+        }
+    </style>
+</head>
+<body>
+<div class="o1"></div>
+<canvas id="o2"></canvas>
+<canvas id="o3"></canvas>
+<script>
+    var o2 = document.getElementById("o2");
+    var ctx = o2.getContext("2d");
+    var x = 60;
+    ctx.fillStyle = 'red';
+
+
+    var p = 360;
+
+
+    function circle(a, b, r, p) { // 原点（a,b）, r 半径, p 精确度数
+        while (p <= 360) {
+            var x = r * Math.sin(p);
+            var m = a + x;
+            var y = r * Math.cos(p);
+            var n = b - y;
+            var div = document.createElement('div');
+            div.style.width = "3px";
+            div.style.height = "3px";
+            div.style.backgroundColor = "red";
+            div.style.position = "absolute";
+            div.style.top = n + "px";
+            div.style.left = m + "px";
+            document.getElementsByTagName("body")[0].appendChild(div);
+            p += .1;
+        }
+    }
+
+
+    circle(450, 200, 200, .1);
+
+    var timer = setInterval((a, b, r) => {
+        var app = document.createElement("div");
+        app.style.width = "5px";
+        app.style.height = "5px";
+        app.style.backgroundColor = "blue";
+        app.style.position = "absolute";
+        var x = r * Math.sin(p);
+        var m = a + x;
+        var y = r * Math.cos(p);
+        var n = b - y;
+        app.style.top = n + "px";
+        app.style.left = m + "px";
+        document.getElementsByTagName("body")[0].appendChild(app);
+        p-=.1;
+        console.log(p);
+        if (p === 0) {
+            clearInterval(timer)
+        }
+    }, 1000, 450, 200, 50)
+</script>
+</body>
+</html>
